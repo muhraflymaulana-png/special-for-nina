@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Special for Nina 23rd ❤️</title>
+
+    <style>
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: 'Poppins', sans-serif;
+
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+        body {
+
+            background: #020208;
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            color: #fff;
+
+        }
+
+
+
+        /* --- BACKGROUND LANGIT MALAM ESTETIK & NEBULA --- */
+
+        .night-sky {
+
+            position: fixed;
+
+            top: 0; left: 0; width: 100%; height: 100%;
+
+            background: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #050212 70%, #000000 100%);
+
+            z-index: 1;
+
+            overflow: hidden;
+
+        }
+
+        .star {
+
+            position: absolute;
+
+            background: #fff;
+
+            border-radius: 50%;
+
+            animation: blink linear infinite;
+
+        }
+
+        .shooting-star {
+
+            position: absolute;
+
+            top: 0; left: 50%; width: 2px; height: 2px;
+
+            background: linear-gradient(90deg, #fff, transparent);
+
+            animation: shoot 4s linear infinite;
+
+            opacity: 0;
+
+        }
+
+        @keyframes blink {
+
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+
+            50% { opacity: 1; transform: scale(1.3); box-shadow: 0 0 8px #fff; }
+
+        }
+
+        @keyframes shoot {
+
+            0% { transform: translateX(0) translateY(0) rotate(-45deg) scale(0); opacity: 0; }
+
+            10% { opacity: 1; transform: translateX(-200px) translateY(200px) rotate(-45deg) scale(1); }
+
+            20% { opacity: 0; transform: translateX(-400px) translateY(400px) rotate(-45deg) scale(0); }
+
+            100% { opacity: 0; }
+
+        }
+
+
+
+        /* Container Canvas Utama */
+
+        .screen-container {
+
+            position: relative;
+
+            z-index: 10;
+
+            width: 100%;
+
+            height: 100%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+        }
+
+
+
+        /* --- SCREEN 1: LOCKSCREEN GLASS KACA & PAD --- */
+
+        #lockscreen {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+        .lock-card {
+
+            background: rgba(255, 255, 255, 0.03);
+
+            padding: 30px 20px;
+
+            border-radius: 24px;
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            width: 320px;
+
+            backdrop-filter: blur(20px) saturate(160%);
+
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 117, 143, 0.1);
+
+        }
+
+        .lock-card h2 { margin-bottom: 10px; font-size: 22px; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.2); }
+
+        .lock-card p { font-size: 13px; margin-bottom: 15px; color: #e0e0e0; line-height: 1.4; }
+
+        
+
+        .pin-screen-display {
+
+            background: rgba(0, 0, 0, 0.4);
+
+            border: 1px solid rgba(255, 117, 143, 0.2);
+
+            border-radius: 12px;
+
+            padding: 10px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #ff758f;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+
+            min-height: 48px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+        
+
+        .keypad-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 10px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .key-btn {
+
+            background: rgba(255, 255, 255, 0.05);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            color: #fff;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            padding: 12px 0;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            transition: all 0.1s ease;
+
+        }
+
+        .key-btn:active {
+
+            background: rgba(255, 117, 143, 0.3);
+
+            border-color: #ff758f;
+
+            transform: scale(0.95);
+
+        }
+
+        
+
+        .lock-card button.submit-action-btn {
+
+            background: linear-gradient(45deg, #ff758f, #ffb6c1); color: #000; border: none;
+
+            padding: 12px 35px; border-radius: 25px; cursor: pointer; font-weight: bold; font-size: 15px;
+
+            transition: transform 0.2s; width: 100%;
+
+        }
+
+        .lock-card button.submit-action-btn:active { transform: scale(0.95); }
+
+        #error-msg { color: #ff4d6d; font-size: 12px; margin-top: 10px; display: none; font-weight: bold; }
+
+
+
+        /* --- SCREEN 2: SEKUENS ANIMASI JEDA KATA (SPARKLE PINK) --- */
+
+        #celebration-screen { display: none; width: 100%; height: 100%; }
+
+        #matrix-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; opacity: 0.4; }
+
+        .celebration-content { position: relative; z-index: 5; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+
+        
+
+        /* Teks Ukuran Besar + Pink Sparkle Glow Effect */
+
+        .step-element {
+
+            display: none;
+
+            font-size: 55px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            background: linear-gradient(45deg, #ff4d6d, #ffb6c1, #ff758f, #c9184a);
+
+            background-size: 200% auto;
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            filter: drop-shadow(0 0 20px rgba(201, 24, 74, 0.8));
+
+            animation: textShimmer 2s linear infinite, popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+        }
+
+        #step-countdown { font-size: 120px; -webkit-text-fill-color: #fff; filter: drop-shadow(0 0 25px #fff); }
+
+        #step-love { font-size: 140px; -webkit-text-fill-color: initial; }
+
+        #step-funny { font-size: 100px; -webkit-text-fill-color: initial; }
+
+
+
+        @keyframes textShimmer { to { background-position: 200% center; } }
+
+        @keyframes popIn { from { opacity: 0; transform: scale(0.5) rotate(-5deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
+
+
+
+        /* --- SCREEN 3: LOVE PHOTO COLLAGE --- */
+
+        #photo-screen {
+
+            display: none;
+
+            position: absolute; width: 100%; height: 100%;
+
+            justify-content: center; align-items: center;
+
+        }
+
+        .love-heart-shape { position: relative; width: 340px; height: 340px; }
+
+        .photo-node {
+
+            position: absolute; width: 58px; height: 58px;
+
+            background: rgba(15, 15, 30, 0.8); border: 2px solid #ff758f;
+
+            border-radius: 12px; overflow: hidden; opacity: 0; transform: scale(0);
+
+            animation: popPhoto 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+            display: flex; justify-content: center; align-items: center; font-size: 22px;
+
+            box-shadow: 0 0 15px rgba(255, 117, 143, 0.4);
+
+        }
+
+        @keyframes popPhoto { to { opacity: 1; transform: scale(1); } }
+
+
+
+        /* --- SCREEN 4: QUESTION POPUP --- */
+
+        #question-screen { display: none; flex-direction: column; justify-content: center; align-items: center; }
+
+        .question-box {
+
+            background: rgba(10, 10, 20, 0.75); padding: 40px 25px; border-radius: 24px;
+
+            border: 1px solid rgba(255, 255, 255, 0.1); width: 340px;
+
+            backdrop-filter: blur(15px); box-shadow: 0 0 35px rgba(255,255,255,0.05);
+
+        }
+
+        .question-box h3 { font-size: 19px; margin-bottom: 30px; line-height: 1.6; font-weight: 600; }
+
+        .btn-wrapper { position: relative; height: 50px; display: flex; justify-content: space-around; align-items: center; }
+
+        .btn-ask { padding: 12px 38px; border-radius: 25px; font-weight: bold; font-size: 15px; cursor: pointer; border: none; }
+
+        #btn-yes { background: #fff; color: #000; box-shadow: 0 0 15px rgba(255,255,255,0.3); }
+
+        #btn-no { background: #151525; color: #666; border: 1px solid #333; position: absolute; transition: all 0.15s ease; }
+
+
+
+        /* --- SCREEN 5: GAME ARCADE MENU --- */
+
+        #game-screen { display: none; flex-direction: column; width: 100%; max-width: 360px; padding: 20px; }
+
+        .game-card-wrapper { background: rgba(10,10,20,0.75); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(15px); border-radius: 24px; padding: 25px 20px; }
+
+        h1.title { font-size: 22px; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 12px; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.2); }
+
+        .game-menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px; }
+
+        .game-card-btn { background: rgba(255,255,255,0.03); color: white; padding: 20px 10px; border-radius: 16px; font-weight: bold; font-size: 13px; cursor: pointer; border: 1px solid rgba(255,255,255,0.1); transition: background 0.3s; }
+
+        .game-card-btn:hover { background: rgba(255,255,255,0.1); }
+
+        
+
+        .game-zone { display: none; background: #050510; padding: 15px; border-radius: 16px; border: 1px solid #222; margin-top: 10px; }
+
+        .back-to-games { background: #222; color: white; border: none; padding: 6px 14px; border-radius: 6px; margin-bottom: 15px; cursor: pointer; font-size: 12px; }
+
+        .scramble-word { font-size: 26px; font-weight: bold; color: #ffb6c1; margin: 12px 0; letter-spacing: 4px; text-shadow: 0 0 10px rgba(255,182,193,0.5); }
+
+        .game-input { width: 85%; padding: 10px; border-radius: 8px; border: 1px solid #444; background: #000; color:#fff; text-align: center; margin-bottom: 12px; font-size: 15px; }
+
+        
+
+        .ttt-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; width: 165px; margin: 15px auto; }
+
+        .ttt-cell { width: 50px; height: 50px; background: #111; border: 1px solid #333; border-radius: 8px; display: flex; justify-content: center; align-items: center; font-size: 18px; font-weight: bold; cursor: pointer; }
+
+        .ludo-btn { background: #fff; color: #000; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+
+
+        /* Sparkle Dot Generator */
+
+        .sparkle-dot {
+
+            position: absolute; background: #ffb6c1; width: 3px; height: 3px; border-radius: 50%;
+
+            box-shadow: 0 0 6px #fff; pointer-events: none; animation: sparkleFade 1.2s linear forwards;
+
+        }
+
+        @keyframes sparkleFade { 0% { opacity: 1; transform: scale(1) translate(0,0); } 100% { opacity: 0; transform: scale(0) translate(var(--mx), var(--my)); } }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <!-- SOURCE AUDIO DIRECT KE BACKSTREET BOYS - SHAPE OF MY HEART -->
+
+    <audio id="backstreet-audio" src="https://files.catbox.moe/gcl2sk.mp3" preload="auto" loop></audio>
+
+
+
+    <div class="night-sky" id="sky-bg">
+
+        <div class="shooting-star"></div>
+
+        <div class="shooting-star" style="animation-delay: 1.5s; left: 70%;"></div>
+
+        <div class="shooting-star" style="animation-delay: 3s; left: 30%;"></div>
+
+    </div>
+
+
+
+    <div class="screen-container">
+
+
+
+        <div id="lockscreen">
+
+            <div class="lock-card">
+
+                <h2>Secret Password 🔒</h2>
+
+                <p>Tanggal kita jadian berapa tgl,bulan,tahun?</p>
+
+                
+
+                <div class="pin-screen-display" id="pin-display-screen"></div>
+
+                
+
+                <div class="keypad-grid">
+
+                    <button class="key-btn" onclick="tekanAngka('1')">1</button>
+
+                    <button class="key-btn" onclick="tekanAngka('2')">2</button>
+
+                    <button class="key-btn" onclick="tekanAngka('3')">3</button>
+
+                    <button class="key-btn" onclick="tekanAngka('4')">4</button>
+
+                    <button class="key-btn" onclick="tekanAngka('5')">5</button>
+
+                    <button class="key-btn" onclick="tekanAngka('6')">6</button>
+
+                    <button class="key-btn" onclick="tekanAngka('7')">7</button>
+
+                    <button class="key-btn" onclick="tekanAngka('8')">8</button>
+
+                    <button class="key-btn" onclick="tekanAngka('9')">9</button>
+
+                    <button class="key-btn" style="color: #ff4d6d;" onclick="hapusAngka()">⌫</button>
+
+                    <button class="key-btn" onclick="tekanAngka('0')">0</button>
+
+                    <button class="key-btn" style="color: #ff758f;" onclick="resetAngka()">C</button>
+
+                </div>
+
+                
+
+                <button class="submit-action-btn" onclick="cekPin()">Masuk ✨</button>
+
+                <p id="error-msg">Masa lupa sih? Coba inget-inget lagi... 😜</p>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="celebration-screen">
+
+            <canvas id="matrix-canvas"></canvas>
+
+            <div class="celebration-content">
+
+                <div id="step-countdown" class="step-element">3</div>
+
+                <div id="step-word" class="step-element"></div>
+
+                <div id="step-love" class="step-element">❤️</div>
+
+                <div id="step-funny" class="step-element">🤪✨</div>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="photo-screen">
+
+            <div class="love-heart-shape" id="heart-nodes-container"></div>
+
+        </div>
+
+
+
+        <div id="question-screen">
+
+            <div class="question-box">
+
+                <h3>Apakah kamu ingin bermain bersamaku? 🥺👉👈</h3>
+
+                <div class="btn-wrapper">
+
+                    <button id="btn-yes" class="btn-ask" onclick="terimaBermain()">Iya</button>
+
+                    <button id="btn-no" class="btn-ask" onmouseover="kaburTombol()" onclick="kaburTombol()">Tidak</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="game-screen">
+
+            <div class="game-card-wrapper">
+
+                <h1 class="title">Arcade Games Room 🎮</h1>
+
+                <div id="game-menu" class="game-menu-grid">
+
+                    <button class="game-card-btn" onclick="bukaGame('game-susun')">🔠<br>Susun Kata</button>
+
+                    <button class="game-card-btn" onclick="bukaGame('game-ttt')">❌⭕<br>Tic Tac Toe</button>
+
+                    <button class="game-card-btn" onclick="bukaGame('game-ular')">🎲<br>Ular Tangga</button>
+
+                    <button class="game-card-btn" onclick="bukaGame('game-tebak')">💡<br>Tebak Kata</button>
+
+                </div>
+
+
+
+                <div id="game-susun" class="game-zone">
+
+                    <button class="back-to-games" onclick="kembaliKeMenuGame()">⬅ Kembali</button>
+
+                    <h3>Susun Kata 🔠</h3>
+
+                    <div class="scramble-word">N A I I T C K</div>
+
+                    <input type="text" id="susun-input" class="game-input" placeholder="Jawaban kamu?">
+
+                    <br><button class="ludo-btn" onclick="jawabSusunKata()">Cek</button>
+
+                    <p id="susun-status" style="margin-top:10px; font-weight:bold; font-size:13px;"></p>
+
+                </div>
+
+
+
+                <div id="game-ttt" class="game-zone">
+
+                    <button class="back-to-games" onclick="kembaliKeMenuGame()">⬅ Kembali</button>
+
+                    <h3>Tic Tac Toe ❌⭕</h3>
+
+                    <div class="ttt-board">
+
+                        <div class="ttt-cell" onclick="klikTTT(0)"></div><div class="ttt-cell" onclick="klikTTT(1)"></div><div class="ttt-cell" onclick="klikTTT(2)"></div>
+
+                        <div class="ttt-cell" onclick="klikTTT(3)"></div><div class="ttt-cell" onclick="klikTTT(4)"></div><div class="ttt-cell" onclick="klikTTT(5)"></div>
+
+                        <div class="ttt-cell" onclick="klikTTT(6)"></div><div class="ttt-cell" onclick="klikTTT(7)"></div><div class="ttt-cell" onclick="klikTTT(8)"></div>
+
+                    </div>
+
+                    <p id="ttt-status" style="font-weight:bold; font-size:13px; margin-bottom:5px;"></p>
+
+                    <button class="ludo-btn" style="font-size:11px; padding:4px 10px;" onclick="resetTTT()">Reset</button>
+
+                </div>
+
+
+
+                <div id="game-ular" class="game-zone">
+
+                    <button class="back-to-games" onclick="kembaliKeMenuGame()">⬅ Kembali</button>
+
+                    <h3>Ular Tangga 🎲</h3>
+
+                    <div style="background:#111; padding:10px; border-radius:8px; margin-bottom:10px; border:1px solid #222; font-size:13px;">
+
+                        <span id="ular-posisi">Posisi: 1</span> | <span id="ular-dadu">Dadu: -</span>
+
+                    </div>
+
+                    <button class="ludo-btn" onclick="kocokDaduUlar()">Kocok 🎲</button>
+
+                    <p id="ular-status" style="margin-top:10px; font-size:13px; color:#aaa;"></p>
+
+                </div>
+
+
+
+                <div id="game-tebak" class="game-zone">
+
+                    <button class="back-to-games" onclick="kembaliKeMenuGame()">⬅ Kembali</button>
+
+                    <h3>Tebak Kata 💡</h3>
+
+                    <p style="font-size:12px; margin-bottom:10px; color:#ccc;">"Aku itu berkilau, indah, dan bakal melingkar di jari manis kamu nanti. Apakah aku?"</p>
+
+                    <input type="text" id="tebak-input" class="game-input" placeholder="Tebakanmu...">
+
+                    <br><button class="ludo-btn" onclick="jawabTebakKata()">Kirim</button>
+
+                    <p id="tebak-status" style="margin-top:10px; font-weight:bold; font-size:13px;"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <script>
+
+        let currentPin = "";
+
+        const pinDisplay = document.getElementById('pin-display-screen');
+
+
+
+        function tekanAngka(num) {
+
+            if(currentPin.length < 6) {
+
+                currentPin += num;
+
+                updatePinView();
+
+            }
+
+        }
+
+
+
+        function hapusAngka() {
+
+            currentPin = currentPin.slice(0, -1);
+
+            updatePinView();
+
+        }
+
+
+
+        document.addEventListener('keydown', function(event) {
+
+            if (document.getElementById('lockscreen').style.display !== 'none') {
+
+                if (event.key >= '0' && event.key <= '9') {
+
+                    tekanAngka(event.key);
+
+                } else if (event.key === 'Backspace') {
+
+                    hapusAngka();
+
+                } else if (event.key === 'Enter') {
+
+                    cekPin();
+
+                }
+
+            }
+
+        });
+
+
+
+        function resetAngka() {
+
+            currentPin = "";
+
+            updatePinView();
+
+        }
+
+
+
+        function updatePinView() {
+
+            let formatted = "";
+
+            for(let i = 0; i < currentPin.length; i++) {
+
+                formatted += currentPin[i];
+
+                if(i === 1 || i === 3) formatted += " - ";
+
+            }
+
+            pinDisplay.innerText = formatted;
+
+        }
+
+
+
+        function generateStars() {
+
+            const sky = document.getElementById('sky-bg');
+
+            for (let i = 0; i < 100; i++) {
+
+                const star = document.createElement('div');
+
+                star.classList.add('star');
+
+                const size = Math.random() * 2 + 0.8;
+
+                star.style.width = size + 'px';
+
+                star.style.height = size + 'px';
+
+                star.style.left = Math.random() * 100 + 'vw';
+
+                star.style.top = Math.random() * 100 + 'vh';
+
+                star.style.animationDuration = Math.random() * 4 + 2 + 's';
+
+                sky.appendChild(star);
+
+            }
+
+        }
+
+        generateStars();
+
+
+
+        window.addEventListener('click', (e) => {
+
+            for(let i=0; i<8; i++){
+
+                const dot = document.createElement('div');
+
+                dot.classList.add('sparkle-dot');
+
+                dot.style.left = e.clientX + 'px';
+
+                dot.style.top = e.clientY + 'px';
+
+                dot.style.setProperty('--mx', (Math.random() - 0.5) * 60 + 'px');
+
+                dot.style.setProperty('--my', (Math.random() - 0.5) * 60 + 'px');
+
+                document.body.appendChild(dot);
+
+                setTimeout(() => dot.remove(), 1200);
+
+            }
+
+        });
+
+
+
+        // RE-ENGINEERED AUDIO CONTROLLER FOR DIRECT CHORUS AUTO-PLAY
+
+        function cekPin() {
+
+            if (currentPin === "221123") {
+
+                const music = document.getElementById('backstreet-audio');
+
+                
+
+                // Set detik track langsung ke bagian Reff utama (00:48)
+
+                music.currentTime = 48.0; 
+
+                music.muted = false; 
+
+                
+
+                let playPromise = music.play();
+
+                if (playPromise !== undefined) {
+
+                    playPromise.then(_ => {
+
+                        console.log("Chorus initialized successfully.");
+
+                    }).catch(error => {
+
+                        // Safe fallback pipeline jika browser memblokir context audio
+
+                        console.log("Interactivity catch triggered.");
+
+                        document.body.addEventListener('click', function triggerForce() {
+
+                            music.currentTime = 48.0;
+
+                            music.play();
+
+                            document.body.removeEventListener('click', triggerForce);
+
+                        }, { once: true });
+
+                    });
+
+                }
+
+
+
+                document.getElementById('lockscreen').style.display = 'none';
+
+                mulaiAlurKejutan();
+
+            } else {
+
+                document.getElementById('error-msg').style.display = 'block';
+
+            }
+
+        }
+
+
+
+        function mulaiAlurKejutan() {
+
+            const celebrateScreen = document.getElementById('celebration-screen');
+
+            celebrateScreen.style.display = 'block';
+
+            initMatrix(); 
+
+
+
+            const elCount = document.getElementById('step-countdown');
+
+            const elWord = document.getElementById('step-word');
+
+            const elLove = document.getElementById('step-love');
+
+            const elFunny = document.getElementById('step-funny');
+
+
+
+            elCount.style.display = 'block';
+
+            setTimeout(() => { elCount.innerText = "2"; }, 1000);
+
+            setTimeout(() => { elCount.innerText = "1"; }, 2000);
+
+            
+
+            setTimeout(() => { elCount.style.display = 'none'; elWord.style.display = 'block'; elWord.innerText = "Happy"; }, 3000);
+
+            setTimeout(() => { triggerReboundEffect(); elWord.innerText = "Birthday"; }, 4100);
+
+            setTimeout(() => { triggerReboundEffect(); elWord.innerText = "To"; }, 5200);
+
+            setTimeout(() => { triggerReboundEffect(); elWord.innerText = "Nina"; }, 6300);
+
+            setTimeout(() => { triggerReboundEffect(); elWord.innerText = "23rd"; }, 7400);
+
+
+
+            setTimeout(() => { elWord.style.display = 'none'; elLove.style.display = 'block'; }, 8800);
+
+            setTimeout(() => { elLove.style.display = 'none'; elFunny.style.display = 'block'; }, 11800);
+
+
+
+            setTimeout(() => {
+
+                celebrateScreen.style.display = 'none';
+
+                tampilkanFormasiFotoLove();
+
+            }, 14800);
+
+        }
+
+
+
+        function triggerReboundEffect() {
+
+            const elWord = document.getElementById('step-word');
+
+            elWord.style.animation = 'none';
+
+            elWord.offsetHeight; 
+
+            elWord.style.animation = 'popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
+
+        }
+
+
+
+        function tampilkanFormasiFotoLove() {
+
+            document.getElementById('photo-screen').style.display = 'flex';
+
+            const container = document.getElementById('heart-nodes-container');
+
+            
+
+            const coords = [
+
+                {x: 170, y: 50},  {x: 120, y: 25},  {x: 70, y: 35},   {x: 35, y: 75}, 
+
+                {x: 30, y: 130},  {x: 50, y: 185},  {x: 90, y: 235},  {x: 130, y: 275},
+
+                {x: 170, y: 310}, {x: 210, y: 275}, {x: 250, y: 235}, {x: 290, y: 185},
+
+                {x: 310, y: 130}, {x: 305, y: 75},  {x: 270, y: 35},  {x: 220, y: 25},
+
+                {x: 120, y: 100}, {x: 220, y: 100}, {x: 170, y: 155}, {x: 120, y: 180}, {x: 220, y: 180}
+
+            ];
+
+
+
+            const isiFoto = ['🌸','✨','👧🏻','❤️','🎂','🥰','🌹','👑','🍣','🎵','💖','💎','🧸','🐱','🍭','🔮','🌈','🎀','🤍','🧁'];
+
+
+
+            coords.forEach((pos, index) => {
+
+                const node = document.createElement('div');
+
+                node.classList.add('photo-node');
+
+                node.style.left = (pos.x - 29) + 'px'; 
+
+                node.style.top = (pos.y - 29) + 'px';
+
+                node.style.animationDelay = (index * 0.08) + 's';
+
+                node.innerHTML = isiFoto[index % isiFoto.length];
+
+                container.appendChild(node);
+
+            });
+
+
+
+            setTimeout(() => {
+
+                document.getElementById('photo-screen').style.display = 'none';
+
+                document.getElementById('question-screen').style.display = 'flex';
+
+            }, 6500);
+
+        }
+
+
+
+        function kaburTombol() {
+
+            const btnNo = document.getElementById('btn-no');
+
+            const xRandom = Math.floor(Math.random() * 220) - 110;
+
+            const yRandom = Math.floor(Math.random() * 160) - 80;
+
+            btnNo.style.transform = `translate(${xRandom}px, ${yRandom}px)`;
+
+        }
+
+
+
+        function terimaBermain() {
+
+            document.getElementById('question-screen').style.display = 'none';
+
+            document.getElementById('game-screen').style.display = 'flex';
+
+        }
+
+
+
+        function initMatrix() {
+
+            const canvas = document.getElementById('matrix-canvas');
+
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+
+            const alphabet = "❤️✨🎂🌹🎵⭐👑🌸".split("");
+
+            const fontSize = 16; const columns = canvas.width / fontSize;
+
+            const rainDrops = Array(Math.floor(columns)).fill(1);
+
+
+
+            function draw() {
+
+                ctx.fillStyle = 'rgba(2, 2, 8, 0.06)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#b7094c'; ctx.font = fontSize + 'px monospace';
+
+                for (let i = 0; i < rainDrops.length; i++) {
+
+                    const text = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+                    ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+                    if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.98) rainDrops[i] = 0;
+
+                    rainDrops[i]++;
+
+                }
+
+            }
+
+            setInterval(draw, 33);
+
+        }
+
+
+
+        function bukaGame(gameId) {
+
+            document.getElementById('game-menu').style.display = 'none';
+
+            document.getElementById(gameId).style.display = 'block';
+
+        }
+
+        function kembaliKeMenuGame() {
+
+            document.querySelectorAll('.game-zone').forEach(zone => zone.style.display = 'none');
+
+            document.getElementById('game-menu').style.display = 'grid';
+
+        }
+
+        function jawabSusunKata() {
+
+            if(document.getElementById('susun-input').value.trim().toLowerCase() === 'cantik') {
+
+                document.getElementById('susun-status').innerText = "Pinter! Kamu memang cantik bgt 🥰";
+
+            } else { document.getElementById('susun-status').innerText = "Salah, coba ngaca deh 😜"; }
+
+        }
+
+
+
+        let tttBoard = ["","","","","","","","",""];
+
+        function klikTTT(i) {
+
+            if(tttBoard[i] === "") {
+
+                tttBoard[i] = "X"; document.querySelectorAll('.ttt-cell')[i].innerText = "X";
+
+                if(!cekWin()) {
+
+                    let kosong = tttBoard.map((v,idx)=>v===""?idx:null).filter(v=>v!==null);
+
+                    if(kosong.length > 0) {
+
+                        let a = kosong[Math.floor(Math.random()*kosong.length)];
+
+                        tttBoard[a] = "O"; document.querySelectorAll('.ttt-cell')[a].innerText = "O"; cekWin();
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        function cekWin() {
+
+            const m = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+            for(let p of m) {
+
+                if(tttBoard[p[0]] && tttBoard[p[0]]===tttBoard[p[1]] && tttBoard[p[0]]===tttBoard[p[2]]) {
+
+                    document.getElementById('ttt-status').innerText = tttBoard[p[0]]==="X"?"Kamu Menang! ❤️":"Bot Sayang Menang!"; return true;
+
+                }
+
+            }
+
+            return false;
+
+        }
+
+        function resetTTT() { tttBoard=["","","","","","","","",""]; document.querySelectorAll('.ttt-cell').forEach(c=>c.innerText=""); document.getElementById('ttt-status').innerText=""; }
+
+
+
+        let posUlar = 1;
+
+        function kocokDaduUlar() {
+
+            let d = Math.floor(Math.random() * 6) + 1; posUlar += d;
+
+            if(posUlar >= 20) { posUlar = 20; document.getElementById('ular-status').innerText = "Finish! Kamu memenangkan hatiku! 🏁❤️"; }
+
+            else { document.getElementById('ular-status').innerText = "Maju terus!"; }
+
+            document.getElementById('ular-dadu').innerText = d; document.getElementById('ular-posisi').innerText = "Posisi: " + posUlar;
+
+        }
+
+
+
+        function jawabTebakKata() {
+
+            if(document.getElementById('tebak-input').value.trim().toLowerCase().includes('cincin')) {
+
+                document.getElementById('tebak-status').innerText = "Betul! Ditunggu ya nanti 💍❤️";
+
+            } else { document.getElementById('tebak-status').innerText = "Salah dong, perhiasan bulat.."; }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
